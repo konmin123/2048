@@ -17,7 +17,7 @@ class Ui_Form(object):
     def setupUi(self, Form):
         if not Form.objectName():
             Form.setObjectName(u"Form")
-        Form.resize(448, 673)
+        Form.resize(453, 673)
         self.horizontalLayout_10 = QHBoxLayout(Form)
         self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
         self.verticalLayout_4 = QVBoxLayout()
@@ -36,6 +36,7 @@ class Ui_Form(object):
         self.le00.setFont(font)
         self.le00.setCursor(QCursor(Qt.SizeVerCursor))
         self.le00.setContextMenuPolicy(Qt.DefaultContextMenu)
+        self.le00.setReadOnly(True)
 
         self.horizontalLayout.addWidget(self.le00)
 
@@ -46,6 +47,7 @@ class Ui_Form(object):
         self.le01.setFont(font)
         self.le01.setCursor(QCursor(Qt.SizeVerCursor))
         self.le01.setContextMenuPolicy(Qt.DefaultContextMenu)
+        self.le01.setReadOnly(True)
 
         self.horizontalLayout.addWidget(self.le01)
 
@@ -56,6 +58,7 @@ class Ui_Form(object):
         self.le02.setFont(font)
         self.le02.setCursor(QCursor(Qt.SizeVerCursor))
         self.le02.setContextMenuPolicy(Qt.DefaultContextMenu)
+        self.le02.setReadOnly(True)
 
         self.horizontalLayout.addWidget(self.le02)
 
@@ -66,6 +69,7 @@ class Ui_Form(object):
         self.le03.setFont(font)
         self.le03.setCursor(QCursor(Qt.SizeVerCursor))
         self.le03.setContextMenuPolicy(Qt.DefaultContextMenu)
+        self.le03.setReadOnly(True)
 
         self.horizontalLayout.addWidget(self.le03)
 
@@ -81,6 +85,7 @@ class Ui_Form(object):
         self.le10.setFont(font)
         self.le10.setCursor(QCursor(Qt.SizeVerCursor))
         self.le10.setContextMenuPolicy(Qt.DefaultContextMenu)
+        self.le10.setReadOnly(True)
 
         self.horizontalLayout_4.addWidget(self.le10)
 
@@ -91,6 +96,7 @@ class Ui_Form(object):
         self.le11.setFont(font)
         self.le11.setCursor(QCursor(Qt.SizeVerCursor))
         self.le11.setContextMenuPolicy(Qt.DefaultContextMenu)
+        self.le11.setReadOnly(True)
 
         self.horizontalLayout_4.addWidget(self.le11)
 
@@ -101,6 +107,7 @@ class Ui_Form(object):
         self.le12.setFont(font)
         self.le12.setCursor(QCursor(Qt.SizeVerCursor))
         self.le12.setContextMenuPolicy(Qt.DefaultContextMenu)
+        self.le12.setReadOnly(True)
 
         self.horizontalLayout_4.addWidget(self.le12)
 
@@ -111,6 +118,7 @@ class Ui_Form(object):
         self.le13.setFont(font)
         self.le13.setCursor(QCursor(Qt.SizeVerCursor))
         self.le13.setContextMenuPolicy(Qt.DefaultContextMenu)
+        self.le13.setReadOnly(True)
 
         self.horizontalLayout_4.addWidget(self.le13)
 
@@ -126,6 +134,7 @@ class Ui_Form(object):
         self.le20.setFont(font)
         self.le20.setCursor(QCursor(Qt.SizeVerCursor))
         self.le20.setContextMenuPolicy(Qt.DefaultContextMenu)
+        self.le20.setReadOnly(True)
 
         self.horizontalLayout_5.addWidget(self.le20)
 
@@ -136,6 +145,7 @@ class Ui_Form(object):
         self.le21.setFont(font)
         self.le21.setCursor(QCursor(Qt.SizeVerCursor))
         self.le21.setContextMenuPolicy(Qt.DefaultContextMenu)
+        self.le21.setReadOnly(True)
 
         self.horizontalLayout_5.addWidget(self.le21)
 
@@ -146,6 +156,7 @@ class Ui_Form(object):
         self.le22.setFont(font)
         self.le22.setCursor(QCursor(Qt.SizeVerCursor))
         self.le22.setContextMenuPolicy(Qt.DefaultContextMenu)
+        self.le22.setReadOnly(True)
 
         self.horizontalLayout_5.addWidget(self.le22)
 
@@ -156,6 +167,7 @@ class Ui_Form(object):
         self.le23.setFont(font)
         self.le23.setCursor(QCursor(Qt.SizeVerCursor))
         self.le23.setContextMenuPolicy(Qt.DefaultContextMenu)
+        self.le23.setReadOnly(True)
 
         self.horizontalLayout_5.addWidget(self.le23)
 
@@ -171,6 +183,7 @@ class Ui_Form(object):
         self.le30.setFont(font)
         self.le30.setCursor(QCursor(Qt.SizeVerCursor))
         self.le30.setContextMenuPolicy(Qt.DefaultContextMenu)
+        self.le30.setReadOnly(True)
 
         self.horizontalLayout_6.addWidget(self.le30)
 
@@ -181,6 +194,7 @@ class Ui_Form(object):
         self.le31.setFont(font)
         self.le31.setCursor(QCursor(Qt.SizeVerCursor))
         self.le31.setContextMenuPolicy(Qt.DefaultContextMenu)
+        self.le31.setReadOnly(True)
 
         self.horizontalLayout_6.addWidget(self.le31)
 
@@ -191,6 +205,7 @@ class Ui_Form(object):
         self.le32.setFont(font)
         self.le32.setCursor(QCursor(Qt.SizeVerCursor))
         self.le32.setContextMenuPolicy(Qt.DefaultContextMenu)
+        self.le32.setReadOnly(True)
 
         self.horizontalLayout_6.addWidget(self.le32)
 
@@ -201,6 +216,7 @@ class Ui_Form(object):
         self.le33.setFont(font)
         self.le33.setCursor(QCursor(Qt.SizeVerCursor))
         self.le33.setContextMenuPolicy(Qt.DefaultContextMenu)
+        self.le33.setReadOnly(True)
 
         self.horizontalLayout_6.addWidget(self.le33)
 
@@ -308,22 +324,22 @@ class Ui_Form(object):
 
     def retranslateUi(self, Form):
         Form.setWindowTitle(QCoreApplication.translate("Form", u"Form", None))
-        self.le00.setText(QCoreApplication.translate("Form", u"2048", None))
-        self.le01.setText(QCoreApplication.translate("Form", u"2048", None))
-        self.le02.setText(QCoreApplication.translate("Form", u"2048", None))
-        self.le03.setText(QCoreApplication.translate("Form", u"2048", None))
-        self.le10.setText(QCoreApplication.translate("Form", u"2048", None))
-        self.le11.setText(QCoreApplication.translate("Form", u"2048", None))
-        self.le12.setText(QCoreApplication.translate("Form", u"2048", None))
-        self.le13.setText(QCoreApplication.translate("Form", u"2048", None))
-        self.le20.setText(QCoreApplication.translate("Form", u"2048", None))
-        self.le21.setText(QCoreApplication.translate("Form", u"2048", None))
-        self.le22.setText(QCoreApplication.translate("Form", u"2048", None))
-        self.le23.setText(QCoreApplication.translate("Form", u"2048", None))
-        self.le30.setText(QCoreApplication.translate("Form", u"2048", None))
-        self.le31.setText(QCoreApplication.translate("Form", u"2048", None))
-        self.le32.setText(QCoreApplication.translate("Form", u"2048", None))
-        self.le33.setText(QCoreApplication.translate("Form", u"2048", None))
+        self.le00.setText(QCoreApplication.translate("Form", u"0", None))
+        self.le01.setText(QCoreApplication.translate("Form", u"0", None))
+        self.le02.setText(QCoreApplication.translate("Form", u"0", None))
+        self.le03.setText(QCoreApplication.translate("Form", u"0", None))
+        self.le10.setText(QCoreApplication.translate("Form", u"0", None))
+        self.le11.setText(QCoreApplication.translate("Form", u"0", None))
+        self.le12.setText(QCoreApplication.translate("Form", u"0", None))
+        self.le13.setText(QCoreApplication.translate("Form", u"0", None))
+        self.le20.setText(QCoreApplication.translate("Form", u"0", None))
+        self.le21.setText(QCoreApplication.translate("Form", u"0", None))
+        self.le22.setText(QCoreApplication.translate("Form", u"0", None))
+        self.le23.setText(QCoreApplication.translate("Form", u"0", None))
+        self.le30.setText(QCoreApplication.translate("Form", u"0", None))
+        self.le31.setText(QCoreApplication.translate("Form", u"0", None))
+        self.le32.setText(QCoreApplication.translate("Form", u"0", None))
+        self.le33.setText(QCoreApplication.translate("Form", u"0", None))
         self.label_2.setText(QCoreApplication.translate("Form", u"score", None))
         self.pushButton_up.setText(QCoreApplication.translate("Form", u"UP", None))
         self.pushButton_help.setText(QCoreApplication.translate("Form", u"Help", None))

@@ -102,6 +102,15 @@ class Field:
         if input_ == 'd':
             self.merge_right()
 
+    def show_score(self):
+        max_value = 0
+        for index_list, list_ in enumerate(self.field):
+            for index_value, value in enumerate(list_):
+                if value > max_value:
+                    max_value = value
+        return max_value
+
+
 
 class Game:
     @staticmethod
@@ -119,4 +128,5 @@ class Game:
 
 
 if __name__ == '__main__':
-    Game.start()
+    x = Field()
+    print(Field.show_score(x))
