@@ -1,14 +1,13 @@
 from mirror_design import Ui_Form
-from main import Game, Field
-from PySide2 import QtWidgets, QtCore
+from logic import Game
+from PySide2 import QtWidgets
 
-x = Field()
+x = Game()
 
 
 class MirrorWindow(QtWidgets.QWidget):
     def __init__(self, parent=None):
         super().__init__(parent)
-        # self.t = TestThread()
         self.ui = Ui_Form()
         self.ui.setupUi(self)
 
@@ -41,7 +40,7 @@ class MirrorWindow(QtWidgets.QWidget):
         print('Помоги себе сам')
 
     def start_game(self):
-        x = Field()
+        x = Game()
         self.display_output()
 
     def turn_players(self):
@@ -54,12 +53,6 @@ class MirrorWindow(QtWidgets.QWidget):
         x.add_two()
         self.display_output()
         self.ui.lcdNumber.display(x.show_score())
-
-
-# class TestThread(QtCore.QThread):
-#     def run(self):
-#         x = Field()
-#         self.display_output()
 
 
 if __name__ == '__main__':
