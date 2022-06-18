@@ -1,24 +1,9 @@
 import random
 
 
-class Game:
-    @staticmethod
-    def start():
-        x = Field()
-        while x.chek_add():
-            x.add_two()
-            x.print_field()
-            x.input_play(input())
-            x.print_field()
-            if x.chek_win():
-                print('Поздравляю!!!')
-                break
-
-
-
 class Field:
     def __init__(self):
-        self.field = [[2, 2, 4, 4], [2, 2, 4, 4], [2, 2, 4, 4], [2, 2, 4, 4]]
+        self.field = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
 
     def print_field(self):
         for line in self.field:
@@ -34,7 +19,7 @@ class Field:
 
     def chek_win(self) -> bool:
         for line in self.field:
-            if 128 in line:
+            if 16 in line:
                 return True
         else:
             return False
@@ -108,18 +93,30 @@ class Field:
                 print(i)
 
     def input_play(self, input_):
-        if input_ == 'w' or 'W':
+        if input_ == 'w':
             self.merge_up()
-        if input_ == 's' or 'S':
+        if input_ == 's':
             self.merge_down()
-        if input_ == 'a' or 'A':
+        if input_ == 'a':
             self.merge_left()
-        if input_ == 'd' or 'D':
+        if input_ == 'd':
             self.merge_right()
 
 
+class Game:
+    @staticmethod
+    def start():
+        x = Field()
+        print("Начинаем игру")
+        while x.chek_add():
+            x.add_two()
+            x.print_field()
+            x.input_play(input())
+            x.print_field()
+            if x.chek_win():
+                print('Поздравляю!!!')
+                break
+
+
 if __name__ == '__main__':
-    x = Field()
-    x.print_field()
-    x.merge_down()
-    x.print_field()
+    Game.start()
