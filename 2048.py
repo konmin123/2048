@@ -12,7 +12,7 @@ class MirrorWindow(QtWidgets.QWidget):
         self.ui.setupUi(self)
 
         self.ui.pushButton_help.clicked.connect(self.help)
-        self.ui.pushButton_start.clicked.connect(self.start_game)
+        self.ui.pushButton_start.clicked.connect(self.start_new_game)
         self.ui.pushButton_up.clicked.connect(self.turn_players)
         self.ui.pushButton_down.clicked.connect(self.turn_players)
         self.ui.pushButton_left.clicked.connect(self.turn_players)
@@ -39,8 +39,9 @@ class MirrorWindow(QtWidgets.QWidget):
     def help(self):
         print('Помоги себе сам')
 
-    def start_game(self):
-        x = Game()
+    def start_new_game(self):
+        x.clear_fild()
+        self.ui.lcdNumber.display(x.show_score())
         self.display_output()
 
     def turn_players(self):

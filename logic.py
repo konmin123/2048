@@ -2,7 +2,7 @@ import random
 
 
 class Game:
-    """Класс описывающий поле игры 2048 и его основные методы"""
+    """Класс описывающий игру 2048 и её основные методы"""
     def __init__(self):
         self.field = [[0 for _ in range(4)] for _ in range(4)]  # Инициализируем поле для игры.
 
@@ -10,6 +10,9 @@ class Game:
         for line in self.field:
             print(line)
         print("-" * 12)
+
+    def clear_fild(self) -> None:  # Метод создающий новое, чистое поле.
+        self.field = [[0 for _ in range(4)] for _ in range(4)]
 
     def check_add(self) -> bool:  # Метод проверяющий наличие доступных для хода клеток.
         for line in self.field:
