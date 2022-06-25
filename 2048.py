@@ -18,6 +18,7 @@ class MirrorWindow(QtWidgets.QWidget):
         self.ui.pushButton_left.clicked.connect(self.turn_player)
         self.ui.pushButton_right.clicked.connect(self.turn_player)
 
+    @QtCore.Slot()
     def display_output(self):
         color_le = {2: 'background-color: LemonChiffon',
                     4: 'background-color: PapayaWhip',
