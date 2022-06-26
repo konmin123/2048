@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>Form</class>
  <widget class="QWidget" name="Form">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -10,8 +13,25 @@
     <height>673</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>453</width>
+    <height>673</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>453</width>
+    <height>673</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <stylestrategy>PreferDefault</stylestrategy>
+   </font>
+  </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>2048</string>
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout_10">
    <item>
@@ -645,6 +665,7 @@
              <property name="font">
               <font>
                <pointsize>15</pointsize>
+               <stylestrategy>PreferDefault</stylestrategy>
               </font>
              </property>
              <property name="text">

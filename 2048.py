@@ -2,6 +2,7 @@ from PySide2 import QtWidgets, QtCore
 
 from logic import Game
 from mirror_design import Ui_Form
+from help_design import Ui_Help
 x = Game()
 
 
@@ -35,13 +36,9 @@ class MirrorWindow(QtWidgets.QWidget):
         for index, horizontal_layout in enumerate(self.ui.verticalLayout.children()):
             for index_ in range(horizontal_layout.count()):
                 value_for_set = x.field[index][index_]
-                item = horizontal_layout.itemAt(index_)
-                item.widget().setText(str(value_for_set))
-                item.widget().setStyleSheet(color_le.get(value_for_set))
-
-    @QtCore.Slot()
-    def help(self):
-        print('Помоги себе сам')
+                item = horizontal_layout.itemAt(index_).widget()
+                item.setText(str(value_for_set))
+                item.setStyleSheet(color_le.get(value_for_set))
 
     @QtCore.Slot()
     def start_new_game(self):
@@ -61,6 +58,18 @@ class MirrorWindow(QtWidgets.QWidget):
         x.add_two()
         self.display_output()
         self.ui.lcdNumber.display(x.show_score())
+
+    @QtCore.Slot()
+    def help(self):
+        self.help = HelpApp()
+        self.help.show()
+
+
+class HelpApp(QtWidgets.QWidget):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.ui = Ui_Help()
+        self.ui.setupUi(self)
 
 
 if __name__ == '__main__':
