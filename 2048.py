@@ -1,4 +1,5 @@
-from PySide2 import QtWidgets, QtCore
+import PySide2
+from PySide2 import QtWidgets, QtCore, QtGui
 
 from logic import Game
 from mirror_design import Ui_Form
@@ -63,6 +64,11 @@ class MirrorWindow(QtWidgets.QWidget):
     def help(self):
         self.help = HelpApp()
         self.help.show()
+
+    @QtCore.Slot()
+    def closeEvent(self, event: QtGui.QCloseEvent) -> None:
+        self.help.close()
+        event.accept()
 
 
 class HelpApp(QtWidgets.QWidget):
