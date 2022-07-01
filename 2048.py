@@ -1,9 +1,11 @@
 import PySide2
 from PySide2 import QtWidgets, QtCore, QtGui
+from PySide2.QtGui import QMovie
 
 from logic import Game
 from mirror_design import Ui_Form
 from help_design import Ui_Help
+from win_design import Ui_Win
 x = Game()
 
 
@@ -58,6 +60,8 @@ class MirrorWindow(QtWidgets.QWidget):
         self.display_output()
         if not x.check_add():
             x.clear_fild()
+        if x.check_win():
+            self.win()
         x.add_two()
         self.display_output()
         self.ui.lcdNumber.display(x.show_score())
@@ -67,10 +71,10 @@ class MirrorWindow(QtWidgets.QWidget):
         self.help = HelpApp()
         self.help.show()
 
-    # @QtCore.Slot()
-    # def closeEvent(self, event: QtGui.QCloseEvent) -> None:
-    #     self.help.close()
-    #     event.accept()
+    @QtCore.Slot()
+    def win(self):
+        self.win_ = WinApp()
+        self.win_.show()
 
 
 class HelpApp(QtWidgets.QWidget):
@@ -79,6 +83,15 @@ class HelpApp(QtWidgets.QWidget):
         self.ui = Ui_Help()
         self.ui.setupUi(self)
 
+
+class WinApp(QtWidgets.QWidget):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.ui = Ui_Win()
+        self.ui.setupUi(self)
+        movie = QMovie("win.gif")
+        self.ui.label.setMovie(movie)
+        movie.start()
 
 
 if __name__ == '__main__':
