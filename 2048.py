@@ -13,7 +13,7 @@ class MirrorWindow(QtWidgets.QWidget):
         self.ui = Ui_Form()
         self.ui.setupUi(self)
 
-        self.ui.pushButton_help.clicked.connect(self.help)
+        self.ui.pushButton_help.clicked.connect(self.help_)
         self.ui.pushButton_start.clicked.connect(self.start_new_game)
         self.ui.pushButton_up.clicked.connect(self.turn_player)
         self.ui.pushButton_down.clicked.connect(self.turn_player)
@@ -56,19 +56,21 @@ class MirrorWindow(QtWidgets.QWidget):
                 "RIGHT": "d"}
         x.input_play(tern.get(self.sender().text()))
         self.display_output()
+        if not x.check_add():
+            x.clear_fild()
         x.add_two()
         self.display_output()
         self.ui.lcdNumber.display(x.show_score())
 
     @QtCore.Slot()
-    def help(self):
+    def help_(self):
         self.help = HelpApp()
         self.help.show()
 
-    @QtCore.Slot()
-    def closeEvent(self, event: QtGui.QCloseEvent) -> None:
-        self.help.close()
-        event.accept()
+    # @QtCore.Slot()
+    # def closeEvent(self, event: QtGui.QCloseEvent) -> None:
+    #     self.help.close()
+    #     event.accept()
 
 
 class HelpApp(QtWidgets.QWidget):
@@ -76,6 +78,7 @@ class HelpApp(QtWidgets.QWidget):
         super().__init__(parent)
         self.ui = Ui_Help()
         self.ui.setupUi(self)
+
 
 
 if __name__ == '__main__':
