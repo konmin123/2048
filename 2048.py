@@ -62,6 +62,7 @@ class MirrorWindow(QtWidgets.QWidget):
             x.clear_fild()
         if x.check_win():
             self.win()
+            x.clear_fild()
         x.add_two()
         self.display_output()
         self.ui.lcdNumber.display(x.show_score())

@@ -24,7 +24,7 @@ class Game:
         for line in self.field:
             if 32 in line:
                 return True
-            return False
+        return False
 
     def add_two(self) -> None:  # Метод создающий список возможных клеток для добавления двойки и добавляющий её.
         list_of_moves = []
