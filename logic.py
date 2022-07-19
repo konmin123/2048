@@ -21,7 +21,7 @@ class Game:
     def check_win(self) -> bool:
         """Метод проверяющий победил ли игрок."""
         for line in self.field:
-            if 32 in line:
+            if 2048 in line:
                 return True
         return False
 
