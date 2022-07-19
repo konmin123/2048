@@ -1,0 +1,4 @@
+PySide2    5.15.2.1
+setuptools 60.2.0
+shiboken2  5.15.2.1
+wheel      0.37.1

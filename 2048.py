@@ -1,17 +1,20 @@
-import PySide2
-from PySide2 import QtWidgets, QtCore, QtGui
+from PySide2 import QtWidgets
 from PySide2.QtGui import QMovie
 
 from logic import Game
-from mirror_design import Ui_Form
-from help_design import Ui_Help
-from win_design import Ui_Win
+from design.mirror_design import Ui_Form
+from design.help_design import Ui_Help
+from design.win_design import Ui_Win
+
 x = Game()
 
 
-class MirrorWindow(QtWidgets.QWidget):
+class Window2048(QtWidgets.QWidget):
+    """Класс описывающий основное окно игры"""
     def __init__(self, parent=None):
         super().__init__(parent)
+        self.win_ = None
+        self.help = None
         self.ui = Ui_Form()
         self.ui.setupUi(self)
 
@@ -22,8 +25,8 @@ class MirrorWindow(QtWidgets.QWidget):
         self.ui.pushButton_left.clicked.connect(self.turn_player)
         self.ui.pushButton_right.clicked.connect(self.turn_player)
 
-    @QtCore.Slot()
     def display_output(self):
+        """Метод обновляющий значения и фон виджетов основного окна"""
         color_le = {2: 'background-color: LemonChiffon',
                     4: 'background-color: PapayaWhip',
                     8: 'background-color: PeachPuff',
@@ -43,15 +46,15 @@ class MirrorWindow(QtWidgets.QWidget):
                 item.setText(str(value_for_set))
                 item.setStyleSheet(color_le.get(value_for_set))
 
-    @QtCore.Slot()
     def start_new_game(self):
+        """Метод запускающий новую игру"""
         x.clear_fild()
         x.add_two()
         self.ui.lcdNumber.display(x.show_score())
         self.display_output()
 
-    @QtCore.Slot()
     def turn_player(self):
+        """Метод выполняющий ход игрока"""
         tern = {"UP": "w",
                 "DOWN": "s",
                 "LEFT": "a",
@@ -67,18 +70,19 @@ class MirrorWindow(QtWidgets.QWidget):
         self.display_output()
         self.ui.lcdNumber.display(x.show_score())
 
-    @QtCore.Slot()
     def help_(self):
+        """Метод открывающий окно с подсказкой"""
         self.help = HelpApp()
         self.help.show()
 
-    @QtCore.Slot()
     def win(self):
+        """Метод открывающий окно с поздравлением и гифкой для победителя"""
         self.win_ = WinApp()
         self.win_.show()
 
 
 class HelpApp(QtWidgets.QWidget):
+    """Класс описывающий окно с подсказкой"""
     def __init__(self, parent=None):
         super().__init__(parent)
         self.ui = Ui_Help()
@@ -86,6 +90,7 @@ class HelpApp(QtWidgets.QWidget):
 
 
 class WinApp(QtWidgets.QWidget):
+    """Класс описывающий окно с поздравлением с победой"""
     def __init__(self, parent=None):
         super().__init__(parent)
         self.ui = Ui_Win()
@@ -98,7 +103,7 @@ class WinApp(QtWidgets.QWidget):
 if __name__ == '__main__':
     app = QtWidgets.QApplication()
 
-    win = MirrorWindow()
+    win = Window2048()
     win.show()
 
     app.exec_()
